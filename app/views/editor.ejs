@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>editor</title>
+    <link rel="stylesheet" href="/dist/handsontable.full.css">
+</head>
+<body>
+<script src="jquery-3.2.1.min.js"></script>
+
+<script src="/dist/handsontable.full.js"></script>
+<div id="example">
+
+</div>
+<script>
+    $.get("/file",function( data ) {
+        console.log(data)
+        var container = document.getElementById('example');
+        var hot = new Handsontable(container, {
+            data: data,
+            rowHeaders: true,
+            colHeaders: true,
+            stretchH: 'all',
+        });
+    });
+
+
+</script>
+</body>
+</html>
